@@ -1,0 +1,59 @@
+<div>
+  <h1>{{ info.title }}</h1>
+  <hr />
+  <h2>Event Binding</h2>
+  <input type="text" (keyup)="repeat($event)" />
+  <br />
+  <span>message: {{ inputs.repeat }}</span>
+
+  <hr />
+  <h2>[(ngModel)], *ngIf</h2>
+  <input type="text" required [(ngModel)]="inputs.repeat2" #repeat2="ngModel" />
+  <span *ngIf="!repeat2.valid; else repeat2Else">Field required</span>
+  <ng-template #repeat2Else>
+    <span>Good!</span>
+  </ng-template>
+  <br />
+  <span>message: {{ inputs.repeat2 }}</span>
+
+  <hr />
+  <h2>*ngFor</h2>
+  <ul *ngFor="let elem of ['Juan', 2, false]; index as i">
+    <li>{{ i }}: {{ elem }}</li>
+  </ul>
+
+  <hr />
+  <h2>[ngSwitch]</h2>
+  <span [ngSwitch]="switchVar">
+    <span *ngSwitchCase="1">one</span>
+    <span *ngSwitchCase="2">two</span>
+    <span *ngSwitchDefault>def</span>
+  </span>
+  <button (click)="increaseSwitch()">increase</button>
+
+  <hr />
+  <h2>[style], [class]</h2>
+  <div [style.background-color]="'purple'" [style.width.px]="200" [style.height]="'40px'" [style.margin]="'0 auto'"
+    [style.color]="'white'">
+    fghj
+  </div>
+  <div [class.invisible]="false" [class.pointer]="true">shaknjdkmasd</div>
+
+  <hr />
+  <h2>[ngStyle], [ngClass]</h2>
+  <div [ngStyle]="{
+    'background-color': 'purple',
+    'width.px': 200,
+    'height': '40px',
+    'margin': '0 auto',
+    'color': 'white'
+  }">
+    fghj
+  </div>
+  <div [ngClass]="{
+    invisible: false,
+    pointer: true
+  }">
+    shaknjdkmasd
+  </div>
+</div>

@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap')
+@import url(./styles/reset.sass)
+
+*
+  font-family: 'Quicksand', sans-serif
+
+app-header
+  app-nav-menu
+    .nav-item
+      margin-left: 20px
+      font-size: 20px
+      font-weight: 500
+      color: #000
+
+      &:hover
+        color: #ff0000
+
+aside
+  app-nav-menu
+    ul
+      flex-direction: column
+      gap: 32px
+
+      .nav-item
+        font-size: 20px
+        font-weight: 500
+        color: #000
+
+.pointer
+  cursor: pointer
+
+.hidden
+  display: none

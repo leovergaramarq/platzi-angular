@@ -1,0 +1,7 @@
+<main>
+  <div class="scrim" [class.hidden]="!siderActive" (click)="hideSider()"></div>
+  <app-header></app-header>
+  <app-sider [active]="siderActive" [hide]="hideSider"></app-sider>
+  <app-products></app-products>
+  <app-hamburger-menu [showSider]="showSider"></app-hamburger-menu>
+</main>

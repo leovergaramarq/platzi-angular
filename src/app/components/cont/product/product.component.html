@@ -1,0 +1,15 @@
+<div>
+  <h3>{{product.name}}</h3>
+  <app-img
+    [src]="product.img"
+    [width]="width"
+    [height]="height"
+    (load)="onLoaded()"
+  ></app-img>
+  <p>{{product.description}}</p>
+  $<span>{{product.price}}</span>
+  <br>
+  Stock: <span>{{product.quantity}}</span>
+  <br>
+  <button (click)="addToCart(product)">Add to cart</button>
+</div>
