@@ -15,8 +15,6 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy, AfterView
     description: 'Description',
     quantity: 0
   };
-  @Input() width: string = '100%';
-  @Input() height: string = '100%';
   @Input() onLoaded: (() => void) = (): void => {};
 
   constructor() {

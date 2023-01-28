@@ -1,15 +1,12 @@
-<div>
+<div class="product">
   <h3>{{product.name}}</h3>
-  <app-img
-    [src]="product.img"
-    [width]="width"
-    [height]="height"
-    (load)="onLoaded()"
-  ></app-img>
-  <p>{{product.description}}</p>
-  $<span>{{product.price}}</span>
-  <br>
-  Stock: <span>{{product.quantity}}</span>
-  <br>
-  <button (click)="addToCart(product)">Add to cart</button>
+  <div class="product-img">
+    <app-img [src]="product.img" (load)="onLoaded()"></app-img>
+  </div>
+  <div class="product-info">
+    <p>{{product.description}}</p>
+    <span>${{product.price}}</span>
+    <span>Stock: {{product.quantity}}</span>
+    <button (click)="addToCart(product)">Add to cart</button>
+  </div>
 </div>

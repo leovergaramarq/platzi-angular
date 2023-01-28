@@ -5,30 +5,58 @@
 *
   font-family: 'Quicksand', sans-serif
 
+// body
+//   max-width: 100vw
+
 app-header
   app-nav-menu
-    .nav-item
-      margin-left: 20px
-      font-size: 20px
-      font-weight: 500
-      color: #000
+  .nav-item
+    margin-left: 20px
+    font-size: 20px
+    font-weight: 500
+    color: #000
 
-      &:hover
-        color: #ff0000
+    &:hover
+      color: #ff0000
+    @media screen and (max-width: 768px)
+      display: none
 
 aside
   app-nav-menu
-    ul
-      flex-direction: column
-      gap: 32px
+  ul
+    flex-direction: column
+    gap: 32px
 
-      .nav-item
-        font-size: 20px
-        font-weight: 500
-        color: #000
+    .nav-item
+      font-size: 20px
+      font-weight: 500
+      color: #000
 
 .pointer
   cursor: pointer
 
 .hidden
   display: none
+
+button
+  border: none
+  outline: none
+  cursor: pointer
+
+.products
+  .product
+    &-img
+      // position: relative
+      object-fit: cover
+      max-width: 300px
+      max-height: 300px
+      margin: 0 auto
+
+      img
+        // position: absolute
+        // top: 50%
+        // left: 50%
+        // transform: translate(-50%, -50%)
+        width: 100%
+        height: 100%
+        cursor: pointer

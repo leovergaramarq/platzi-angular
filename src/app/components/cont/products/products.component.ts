@@ -7,7 +7,7 @@ import Product from 'src/app/models/product.model';
   styleUrls: ['./products.component.sass']
 })
 export class ProductsComponent {
-  products: Product[] = this.genProducts(2);
+  products: Product[] = this.genProducts(10);
   title: string = 'Loading products...';
   productsLoadedCount: number = 0;
   onProductLoaded: () => void = (): void => {

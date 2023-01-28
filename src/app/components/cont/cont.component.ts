@@ -9,7 +9,7 @@ import { SiderService } from "../../services/sider.service";
 export class ContComponent implements OnInit {
   ngOnInit(): void { }
 
-  siderActive: boolean = true;
+  siderActive: boolean = false;
 
   showSider: () => void = (): void => {
     this.siderService.showMenu();
