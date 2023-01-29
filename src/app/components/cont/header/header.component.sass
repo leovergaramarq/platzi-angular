@@ -28,3 +28,37 @@ header
       font-weight: 500
       color: #000
       cursor: pointer
+
+      .cart-area
+        position: relative
+
+        .cart
+          transition: all 0.2s ease-in-out
+
+          @keyframes cart-anim
+            0%
+              transform: rotate(0)
+            33%
+              transform: rotate(-10deg)
+            66%
+              transform: rotate(-5deg)
+            100%
+              transform: rotate(-10deg)
+
+          // animation: cart-anim 0.5s ease-in-out forwards
+          :hover
+            animation: cart-anim 0.5s ease-in-out forwards
+
+        .cart-count
+          position: absolute
+          top: -10px
+          right: -10px
+          width: 20px
+          height: 20px
+          border-radius: 50%
+          background-color: #000
+          color: #fff
+          display: flex
+          justify-content: center
+          align-items: center
+          font-size: 12px

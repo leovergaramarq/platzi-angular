@@ -1,8 +1,21 @@
 .product
+  padding: 16px
+  border-radius: 8px
+
+  &:hover
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2)
+    transform: scale(1.02)
+    transition: all 0.1s ease-in-out
+
   h3
     font-size: 1.5rem
     font-weight: 600
     margin-bottom: 8px
+
+  &-img
+    object-fit: cover
+    max-width: 200px
+    margin: 24px auto 0 auto
 
   &-info
     display: flex
@@ -11,8 +24,18 @@
     margin-bottom: 16px
     margin-top: 8px
 
+    p
+      display: -webkit-box
+      -webkit-line-clamp: 4
+      -webkit-box-orient: vertical
+      overflow: hidden
+      text-overflow: ellipsis
+
     button
       border-radius: 12px
       background: #f88b8b
       padding: 8px 12px
+      font-size: 1.2rem
 
+      &:hover
+        filter: brightness(0.9)

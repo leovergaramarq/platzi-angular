@@ -1,12 +1,13 @@
-<div class="product">
+<div class="product pointer">
   <h3>{{product.name}}</h3>
   <div class="product-img">
-    <app-img [src]="product.img" (load)="onLoaded()"></app-img>
+    <app-img [src]="product.img" (load)="imgLoad()"></app-img>
   </div>
-  <div class="product-info">
+  <div class="product-info" *ngIf="imgLoaded">
     <p>{{product.description}}</p>
-    <span>${{product.price}}</span>
-    <span>Stock: {{product.quantity}}</span>
+    <span>{{product.price | usd}}</span>
+    <!-- <span>{{product.price | currency: 'USD'}}</span> -->
+    <span>Stock: <span class="stock" appStock>{{product.quantity}}</span></span>
     <button (click)="addToCart(product)">Add to cart</button>
   </div>
 </div>

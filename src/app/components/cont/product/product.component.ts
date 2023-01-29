@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnChanges, OnDestroy, AfterViewInit, SimpleChanges } from '@angular/core';
 import Product from 'src/app/models/product.model';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-product',
@@ -15,12 +16,15 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy, AfterView
     description: 'Description',
     quantity: 0
   };
-  @Input() onLoaded: (() => void) = (): void => {};
+  @Input() onLoaded: (() => void) = (): void => { };
+  imgLoaded: boolean = false;
+  cart: Product[] = [];
 
-  constructor() {
+  constructor(private storeService: StoreService) {
     // before render
     // NO async -- one time
     // console.log('constructor');
+    this.cart = this.storeService.getCart();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -47,12 +51,27 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy, AfterView
     // console.log('ngOnDestroy');
   }
 
-  asd() {
-    console.log('asdasdasd');
-
+  imgLoad() {
+    this.imgLoaded = true;
+    this.onLoaded();
   }
 
   addToCart(product: Product): void {
-    console.log('addToCart', product);
+    this.storeService.addToCart(product);
+    this.cart = this.storeService.getCart();
+  }
+
+  removeFromCart(product: Product): void {
+    this.storeService.removeFromCart(product);
+    this.cart = this.storeService.getCart();
+  }
+
+  clearCart(): void {
+    this.storeService.clearCart();
+    this.cart = this.storeService.getCart();
+  }
+
+  getCartTotal(): number {
+    return this.storeService.getCartTotal();
   }
 }
